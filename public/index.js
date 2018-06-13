@@ -8,8 +8,6 @@ const app = function(){
   setDefinitionText('#country-name', savedCountry.name);
   setDefinitionText('#country-population', savedCountry.population);
   setDefinitionText('#country-capital', savedCountry.capital);
-
-
 }
 
 var setDefinitionText = function (id, text) {
@@ -27,17 +25,14 @@ const makeRequest = function(url, callback){
 
 const requestComplete = function() {
   if(this.status !== 200) return;
-  // console.log(this.responseText);
   const countries = JSON.parse(this.response);
-  // console.log(countries);
-  // populateList(countries);
   populateSelectionList(countries);
-  // makeButton(countries);
-
   const dropdown = document.querySelector("#country");
   dropdown.addEventListener('change', function(){
     displayCountry(countries)
   });
+  makeButton(countries);
+
 }
 
 const populateSelectionList = function(countries) {
@@ -50,23 +45,23 @@ const populateSelectionList = function(countries) {
 
 }
 
-// const populateList = function(countries) {
-//   const ul = document.querySelector("#country-list");
-//   countries.forEach(function(country) {
-//     if (country.population > 50000) {
-//       const li = document.createElement("li");
-//       li.textContent = country.name + "    -     " + country.capital + "    -    " + country.population;
-//       ul.appendChild(li);
-//     }
-//   })
-// }
+const populateList = function(countries) {
+  const ul = document.querySelector("#country-list");
+  countries.forEach(function(country) {
+    if (country.population > 50000) {
+      const li = document.createElement("li");
+      li.textContent = country.name + "    -     " + country.capital + "    -    " + country.population;
+      ul.appendChild(li);
+    }
+  })
+}
 
-// const makeButton = function(countries) {
-//   const button = document.getElementById("list-all-button");
-//   button.addEventListener("click", function() {
-//     populateList(countries);
-//   });
-// }
+const makeButton = function(countries) {
+  const button = document.getElementById("list-all-button");
+  button.addEventListener("click", function() {
+    populateList(countries);
+  });
+}
 
 const displayCountry = function(countries) {
   const selectedCountry = document.querySelector('#country').value;
