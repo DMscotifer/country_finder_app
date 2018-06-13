@@ -2,7 +2,21 @@ const app = function(){
   const url = "http://restcountries.eu/rest/v2/all";
   makeRequest(url, requestComplete);
 
+  const jsonStringCountry = localStorage.getItem('chosenCountry');
+  const savedCountry = JSON.parse(jsonStringCountry);
+
+  setDefinitionText('#country-name', savedCountry.name);
+  setDefinitionText('#country-population', savedCountry.population);
+  setDefinitionText('#country-capital', savedCountry.capital);
+
+
 }
+
+var setDefinitionText = function (id, text) {
+  var span = document.querySelector(id);
+  span.innerText = text;
+}
+
 
 const makeRequest = function(url, callback){
   const request = new XMLHttpRequest();
@@ -73,6 +87,10 @@ const displayCountry = function(countries) {
   ul.appendChild(liName);
   ul.appendChild(liPopulation);
   ul.appendChild(liCapital);
+
+  const jsonStringCountry = JSON.stringify(countryObj);
+  localStorage.setItem('chosenCountry', jsonStringCountry);
+
 }
 
 window.addEventListener('load', app);

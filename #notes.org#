@@ -2,7 +2,8 @@
 
 * DONE Make a select drop down with all the countries.
   CLOSED: [2018-06-13 Wed 12:52]
-* TODO Display the country name, population, capital city of the country that is selected.
+* DONE Display the country name, population, capital city of the country that is selected.
+  CLOSED: [2018-06-13 Wed 14:24]
 * TODO Persist the last country that was selected in localStorage.
 * TODO Style with CSS
 
