@@ -16,12 +16,18 @@ const requestComplete = function() {
   const countries = JSON.parse(this.response);
   // console.log(countries);
   // populateList(countries);
-  populateSelectionList(country);
+  populateSelectionList(countries);
   makeButton(countries);
 
 }
 
 const populateSelectionList = function(countries) {
+  const selectField = document.getElementById("country");
+  countries.forEach(function(country) {
+    const option = document.createElement("option");
+    option.textContent = country.name;
+    selectField.appendChild(option);
+  })
 
 }
 
