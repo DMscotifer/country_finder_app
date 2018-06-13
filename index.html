@@ -2,18 +2,76 @@
 <html>
 <head>
   <title>Country App</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <script src='index.js'></script>
 </head>
 <body>
-  <h1>Countries</h1>
-  <button id="list-all-button">List All Countries</button>
-  <select id="country"></select>
-  <ul id="country-details">
-    <li id="country-name"></li>
-    <li id="country-population"></li>
-    <li id="country-capital"></li>
-  </ul>
-  <ul id='country-list'>
-  </ul>
+  <div class="terminal-window">
+    <header>
+      <div class="button green"></div>
+      <div class="button yellow"></div>
+      <div class="button red"></div>
+    </header>
+    <section class="terminal">
+      <div class="history"></div>
+      $&nbsp;<span class="prompt"></span>
+      <span class="typed-cursor"></span>
+
+    </section>
+    <div class="app-output">
+<div class="title-art">
+    <pre>
+//////////////////////////////////////////////////////////////////////////
+//       _   _      _ _         _    _            _     _ _             //
+//      | | | |    | | |       | |  | |          | |   | | |            //
+//      | |_| | ___| | | ___   | |  | | ___  _ __| | __| | |            //
+//      |  _  |/ _ \ | |/ _ \  | |/\| |/ _ \| '__| |/ _` | |            //
+//      | | | |  __/ | | (_) | \  /\  / (_) | |  | | (_| |_|            //
+//      \_| |_/\___|_|_|\___/   \/  \/ \___/|_|  |_|\__,_(_)            //
+//                                                                      //
+//////////////////////////////////////////////////////////////////////////
+</pre>
+</div>
+<div class="ascii-border">
+
+<ul class="chosen-country" id="country-details">
+  <li id="country-name"></li>
+  <li id="country-population"></li>
+  <li id="country-capital"></li>
+</ul>
+</div>
+<div class="globe">
+<pre>
+
+           _.-,=_"""--,_
+        .-" =/7"   _  .3#"=.
+      ,#7  " "  ,//)#d#######=.
+    ,/ "      # ,i-/###########=
+   /         _)#sm###=#=# #######\
+  /         (#/"_`;\//#=#\-#######\
+ /         ,d####-_.._.)##P########\
+,        ,"############\\##bi- `\| Y.
+|       .d##############b\##P'   V  |
+|\      '#################!",       |
+|C.       \###=############7        |
+'###.           )#########/         '
+ \#(             \#######|         /
+  \B             /#######7 /      /
+   \             \######" /"     /
+    `.            \###7'       ,'
+      "-_          `"'      ,-'
+         "-._           _.-"
+             """"---""""
+</pre>
+</div>
+<h1>Countries</h1>
+<button id="list-all-button">List All Countries</button>
+<select id="country"></select>
+<ul id='country-list'>
+</ul>
+</div>
+
+</div>
+
 </body>
 </html>

@@ -50,7 +50,7 @@ const populateList = function(countries) {
   countries.forEach(function(country) {
     if (country.population > 50000) {
       const li = document.createElement("li");
-      li.textContent = country.name + "    -     " + country.capital + "    -    " + country.population;
+      li.textContent = country.name;
       ul.appendChild(li);
     }
   })
