@@ -1,0 +1,12 @@
+# Rest Countries API Lab
+
+* DONE Make a select drop down with all the countries.
+  CLOSED: [2018-06-13 Wed 12:52]
+* TODO Display the country name, population, capital city of the country that is selected.
+* TODO Persist the last country that was selected in localStorage.
+* TODO Style with CSS
+
+Further: Add new functionality. eg
+* TODO - Show bordering countries and their statistics.
+* TODO - Filter select to only show countries in a region, sub-region.
+* TODO - Add a map with a marker on the selected country.
