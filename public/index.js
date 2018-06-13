@@ -15,7 +15,14 @@ const requestComplete = function() {
   // console.log(this.responseText);
   const countries = JSON.parse(this.response);
   // console.log(countries);
-  populateList(countries);
+  // populateList(countries);
+  populateSelectionList(country);
+  makeButton(countries);
+
+}
+
+const populateSelectionList = function(countries) {
+
 }
 
 const populateList = function(countries) {
@@ -27,6 +34,13 @@ const populateList = function(countries) {
       ul.appendChild(li);
     }
   })
+}
+
+const makeButton = function(countries) {
+  const button = document.getElementById("list-all-button");
+  button.addEventListener("click", function() {
+    populateList(countries);
+  });
 }
 
 window.addEventListener('load', app);
