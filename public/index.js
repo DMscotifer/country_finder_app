@@ -2,9 +2,6 @@ const app = function(){
   const url = "http://restcountries.eu/rest/v2/all";
   makeRequest(url, requestComplete);
 
-  const dropdown = document.querySelector("#country");
-  dropdown.addEventListener('change', displayCountry);
-
 }
 
 const makeRequest = function(url, callback){
@@ -22,6 +19,11 @@ const requestComplete = function() {
   // populateList(countries);
   populateSelectionList(countries);
   // makeButton(countries);
+
+  const dropdown = document.querySelector("#country");
+  dropdown.addEventListener('change', function(){
+    displayCountry(countries)
+  });
 }
 
 const populateSelectionList = function(countries) {
@@ -52,14 +54,25 @@ const populateSelectionList = function(countries) {
 //   });
 // }
 
-const displayCountry = function() {
-  console.log('in displayCountry()');
+const displayCountry = function(countries) {
   const selectedCountry = document.querySelector('#country').value;
-  stringifiedSelectedCountry = JSON.stringify(selectedCountry);
+  let countryObj = null;
+  countries.forEach(function(country){
+    if(selectedCountry === country.name) {
+      countryObj = country;
+    }
+  })
+
   const ul = document.querySelector("#country-details");
   const liName = document.querySelector("#country-name");
-  liName.textContent = stringifiedSelectedCountry.name;
-  console.log(stringifiedSelectedCountry);
+  const liPopulation = document.querySelector("#country-population");
+  const liCapital = document.querySelector("#country-capital");
+  liName.textContent = countryObj.name;
+  liPopulation.textContent = "Population: " + countryObj.population;
+  liCapital.textContent = "Capital City: " + countryObj.capital;
+  ul.appendChild(liName);
+  ul.appendChild(liPopulation);
+  ul.appendChild(liCapital);
 }
 
 window.addEventListener('load', app);
